@@ -22,7 +22,7 @@ function generateUniqueNumber() {
     return number;
   }
 
-  const ans = generateUniqueNumber();
+  let ans = generateUniqueNumber();
 
   function check_guess(guess) {
     let bulls = 0, cows = 0;
@@ -52,6 +52,7 @@ game_input.addEventListener(`input`, () => {
         });
         if (cont[0] === 4) { // Если угадали все цифры, генерируем новое секретное число
             ans = generateUniqueNumber();
+            console.log(ans);
         }
     }
 });
