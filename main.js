@@ -1,5 +1,6 @@
 const game_input = document.getElementById(`game_input`);
 const game_field_els = document.querySelectorAll(`.game_field_el`);
+const pop_up = document.querySelector(`.pop_up`);
 
 function valid_num(num) {
   let digits = num.toString().split('');
@@ -36,6 +37,14 @@ function generateUniqueNumber() {
     return [bulls, cows];
 }
 
+document.addEventListener('click', function(event) {
+    const isClickedInsidePopUp = pop_up.contains(event.target);
+
+    if (!isClickedInsidePopUp) {
+      pop_up.style.display = 'none';
+    }
+  });
+
 game_input.addEventListener(`input`, () => {
     const game_num = game_input.value;
     // game_num = game_num.trim();
@@ -50,7 +59,8 @@ game_input.addEventListener(`input`, () => {
                 el.innerHTML = '';
             }
         });
-        if (cont[0] === 4) { // Если угадали все цифры, генерируем новое секретное число
+        if (cont[0] === 4) {
+            pop_up.style.display = `flex`;
             ans = generateUniqueNumber();
             console.log(ans);
         }

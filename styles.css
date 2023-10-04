@@ -59,3 +59,27 @@ body {
     text-align: center;
     font-weight: 400;
 }
+
+.pop_up {
+    position: fixed;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    border: #333 5px solid;
+    background: #fff;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 50%;
+    height: 45%;
+    z-index: 999;
+}
+
+.pop_up p{
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+}
